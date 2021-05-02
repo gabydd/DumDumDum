@@ -1617,3 +1617,4 @@ senv/Scripts/pip3.9.exe
 senv/Scripts/pip3.exe
 senv/Scripts/python.exe
 senv/Scripts/pythonw.exe
+.vscode/settings.json
