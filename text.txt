@@ -1,0 +1,45 @@
+def main():
+    up = pg.Rect(10, 30, ARROW_WIDTH, ARROW_HEIGHT)
+    down = pg.Rect(60, 30, ARROW_WIDTH, ARROW_HEIGHT)
+    left = pg.Rect(110, 30, ARROW_WIDTH, ARROW_HEIGHT)
+    right = pg.Rect(160, 30, ARROW_WIDTH, ARROW_HEIGHT)
+    other = pg.Rect(210, 30, ARROW_WIDTH, ARROW_HEIGHT)
+    pg.init()
+    run = True
+    while run:
+        events = pg.event.get()
+        for event in events:
+            if event.type == pg.QUIT:
+                run = False
+                pg.quit
+                sys.exit()
+        screen.fill((125, 125, 125))
+        #screen.blit(isa, (10, 20))
+        screen.blit(up_arrow, (up.x,up.y))
+        screen.blit(down_arrow, (down.x,down.y))
+        screen.blit(left_arrow, (left.x,left.y))
+        screen.blit(right_arrow, (right.x,right.y))
+        screen.blit(other_arrow.image, (other.x, other.y))
+        pg.display.update()
+
+
+class Arrow:
+    def __init__(self, direction, rectangle):
+        self.direction = direction
+        self.rectangle = rectangle
+        if self.direction == 'u':
+            arrow_image = GREEN_IMAGE
+            rotation = 0
+        if self.direction == 'd':
+            arrow_image = RED_IMAGE
+            rotation = 180
+        if self.direction == 'l':
+            arrow_image = YELLOW_IMAGE
+            rotation = 90
+        if self.direction == 'r':
+            arrow_image = BLUE_IMAGE
+            rotation = 270
+        self.image = pg.transform.rotate(pg.transform.scale((load_image(arrow_image).convert()), (ARROW_WIDTH, ARROW_HEIGHT)), rotation)
+        self.image.set_colorkey(WHITE)
+    def rect(self, x, y):
+        pass

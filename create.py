@@ -105,7 +105,25 @@ def draw_window(key, score, right_letters, wrong_letters):
     pg.display.update()
 
 class Arrow:
-    def __init__()
+    def __init__():
+        pass
+
+def load_arrow(self, direction):
+        self.direction = direction
+        if self.direction == 'u':
+            arrow_image = GREEN_IMAGE
+            rotation = 0
+        if self.direction == 'd':
+            arrow_image = RED_IMAGE
+            rotation = 180
+        if self.direction == 'l':
+            arrow_image = YELLOW_IMAGE
+            rotation = 90
+        if self.direction == 'r':
+            arrow_image = BLUE_IMAGE
+            rotation = 270
+        self.image = pg.transform.rotate(pg.transform.scale((load_image(arrow_image).convert()), (ARROW_WIDTH, ARROW_HEIGHT)), rotation)
+        self.image.set_colorkey(WHITE)
 
 # Imagery and sounds
 
