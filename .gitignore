@@ -1,4 +1,4 @@
-senv/*
+env/*
 __pycache__/*
 .vscode/*
 backups/*
